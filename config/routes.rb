@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'recipes/index'
       post 'recipes/create'
-      get 'recipes/show/:id', to: 'recipes#show'
-      delete 'recipes/destroy/:id', to: 'recipes#destroy'
+      get 'recipes/:id', to: 'recipes#show'
+      delete 'recipes/:id', to: 'recipes#destroy'
     end
   end
   root 'homepage#index'
