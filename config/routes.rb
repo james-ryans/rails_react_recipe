@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'recipes/index'
-      post 'recipes/create'
+      post 'recipes', to: 'recipes#store'
       get 'recipes/:id', to: 'recipes#show'
       delete 'recipes/:id', to: 'recipes#destroy'
     end
