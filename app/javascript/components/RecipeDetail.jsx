@@ -19,6 +19,23 @@ const Recipe = () => {
       });
   };
 
+  const deleteRecipeById = (id) => {
+    console.log('call delete', id);
+
+    const url = `/api/v1/recipes/${id}`
+
+    const token = document.querySelector('[name=csrf-token]').content
+    axios.defaults.headers.common['X-CSRF-TOKEN'] = token
+
+    axios.delete(url)
+      .then(() => {
+        history.push("/recipes");
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  };
+
   useEffect(() => {
     getRecipeById(id);
   }, []);
@@ -56,7 +73,7 @@ const Recipe = () => {
             <p>{recipe?.instruction}</p>
           </div>
           <div className="col-sm-12 col-lg-2">
-            <Button variant="danger">Delete Recipe</Button>
+            <Button variant="danger" onClick={() => {deleteRecipeById(id)}}>Delete Recipe</Button>
           </div>
         </div>
         <div className="mt-5 d-flex justify-content-center">
