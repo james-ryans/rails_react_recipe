@@ -23,10 +23,6 @@ const Recipe = () => {
     getRecipeById(id);
   }, []);
 
-  useEffect(() => {
-    console.log(recipe?.ingredients.split(","));
-  }, [recipe]);
-
   return (
     <>
       <div className="hero position-relative d-flex align-items-center justify-content-center">
