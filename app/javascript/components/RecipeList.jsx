@@ -37,8 +37,8 @@ const Recipes = () => {
       <div className="py-5">
         <main className="container">
           <div className="d-flex flex-row-reverse text-right mb-3">
-            <Link to="/recipes/create" className="btn custom-button">
-              Create New Recipe
+            <Link to="/recipes/create">
+              <Button variant="dark" size="lg">Create New Recipe</Button>
             </Link>
           </div>
           <div className="row">
@@ -66,7 +66,7 @@ const Recipes = () => {
           </div>
           <div className="mt-5 d-flex justify-content-center">
             <Link to="/">
-              <Button variant="dark">Home</Button>
+              <Button variant="dark" size="lg">Home</Button>
             </Link>
           </div>
         </main>

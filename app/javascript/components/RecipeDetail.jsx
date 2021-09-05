@@ -20,8 +20,6 @@ const Recipe = () => {
   };
 
   const deleteRecipeById = (id) => {
-    console.log('call delete', id);
-
     const url = `/api/v1/recipes/${id}`
 
     const token = document.querySelector('[name=csrf-token]').content
@@ -78,7 +76,7 @@ const Recipe = () => {
         </div>
         <div className="mt-5 d-flex justify-content-center">
           <Link to="/recipes">
-            <Button variant="dark">Back to recipes</Button>
+            <Button variant="dark" size="lg">Back to recipes</Button>
           </Link>
         </div>
       </div>
